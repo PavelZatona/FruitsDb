@@ -38,9 +38,9 @@ namespace FruitsDb
             var fruitsService = diProvider.GetService<IFruitsService>();
 
             // Вставляем фрукты
-            fruitsService.TryToAddFruit(new Fruit() { Name = "Апельсин", Weight = 250.0, Color = FruitColor.Red });
-            fruitsService.TryToAddFruit(new Fruit() { Name = "Лимон", Weight = 150, Color= FruitColor.Yellow });
-            fruitsService.TryToAddFruit(new Fruit() { Name = "Мандарин", Weight = 100, Color = FruitColor.Green });
+            fruitsService.TryToAddFruit(new Fruit() { Name = "Апельсин", Weight = fruitsService.GetRandomWeight(), Color = FruitColor.Red });
+            fruitsService.TryToAddFruit(new Fruit() { Name = "Лимон", Weight = fruitsService.GetRandomWeight(), Color= FruitColor.Yellow });
+            fruitsService.TryToAddFruit(new Fruit() { Name = "Мандарин", Weight = fruitsService.GetRandomWeight(), Color = FruitColor.Green });
 
             // Распечатываем фрукты
             var fruits = fruitsService.GetAllFruits();

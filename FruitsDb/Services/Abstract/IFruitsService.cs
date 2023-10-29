@@ -26,5 +26,10 @@ namespace FruitsDb.Services.Abstract
         /// Get human-readable color name
         /// </summary>
         string GetFruitColorName(FruitColor color);
+
+        /// <summary>
+        /// Генерирует случайный вес фрукта
+        /// </summary>
+        double GetRandomWeight();
     }
 }

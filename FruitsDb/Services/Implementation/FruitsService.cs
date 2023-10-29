@@ -15,6 +15,11 @@ namespace FruitsDb.Services.Implementation
         private readonly IFruitsDao _fruitsDao; // readonly означает, что значение можно установить только в конструкторе
         // в остальных местах такое свойство можно только читать
 
+        /// <summary>
+        /// Генератор случайных чисел.
+        /// </summary>
+        private readonly Random _random = new Random();
+
         public FruitsService
         (
             IFruitsDao fruitsDao
@@ -48,6 +53,11 @@ namespace FruitsDb.Services.Implementation
                 default:
                     throw new InvalidOperationException("Неизвестный цвет. Добавь его в GetFruitColorName()!");
             }
+        }
+
+        public double GetRandomWeight()
+        {
+            return _random.Next(50000, 250001) / 1000.0;
         }
 
         public void TryToAddFruit(Fruit fruit)
