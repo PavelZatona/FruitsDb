@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FruitsDb.DAO.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace FruitsDb.DAO
 {
@@ -13,5 +14,7 @@ namespace FruitsDb.DAO
         public string Name { get; set; }
 
         public double Weight { get; set; }
+
+        public FruitColor Color { get; set; }
     }
 }

@@ -22,7 +22,8 @@ namespace FruitsDb.Mappers.Implemntations
             {
                 Id = fruit.Id,
                 Name = fruit.Name,
-                Weight = fruit.Weight
+                Weight = fruit.Weight,
+                Color = fruit.Color
             };
         }
 
@@ -37,7 +38,8 @@ namespace FruitsDb.Mappers.Implemntations
             {
                 Id = fruit.Id,
                 Name = fruit.Name,
-                Weight = fruit.Weight
+                Weight = fruit.Weight,
+                Color = fruit.Color
             };
         }
 

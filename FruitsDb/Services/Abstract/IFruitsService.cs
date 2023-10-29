@@ -1,4 +1,5 @@
-﻿using FruitsDb.Models;
+﻿using FruitsDb.DAO.Enums;
+using FruitsDb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,10 @@ namespace FruitsDb.Services.Abstract
         /// </summary>
         /// <param name="fruit">Fruit to add</param>
         void TryToAddFruit(Fruit fruit);
+
+        /// <summary>
+        /// Get human-readable color name
+        /// </summary>
+        string GetFruitColorName(FruitColor color);
     }
 }

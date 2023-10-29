@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FruitsDb.DAO.Enums;
 
 namespace FruitsDb.Models
 {
@@ -16,5 +12,7 @@ namespace FruitsDb.Models
         public string Name { get; set; }
 
         public double Weight { get; set; }
+
+        public FruitColor Color { get; set; }
     }
 }

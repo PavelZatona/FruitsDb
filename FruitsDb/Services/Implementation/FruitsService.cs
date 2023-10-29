@@ -1,4 +1,5 @@
 ﻿using FruitsDb.DAO;
+using FruitsDb.DAO.Enums;
 using FruitsDb.Models;
 using FruitsDb.Services.Abstract;
 using System;
@@ -25,6 +26,28 @@ namespace FruitsDb.Services.Implementation
         public IReadOnlyCollection<Fruit> GetAllFruits()
         {
             return _fruitsDao.GetAllFruits();
+        }
+
+        public string GetFruitColorName(FruitColor color)
+        {
+            switch (color)
+            {
+                case FruitColor.UnknownColor:
+                    return "Неизвестный";
+
+                case FruitColor.Red:
+                    return "Красный";
+
+                case FruitColor.Yellow:
+                    return "Жёлтый";
+
+                case FruitColor.Green:
+                    return "Зелёный";
+
+                // Специальная секция - вызывается когда ни один выбор не подошёл
+                default:
+                    throw new InvalidOperationException("Неизвестный цвет. Добавь его в GetFruitColorName()!");
+            }
         }
 
         public void TryToAddFruit(Fruit fruit)

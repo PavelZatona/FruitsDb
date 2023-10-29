@@ -1,4 +1,5 @@
 ﻿using FruitsDb.DAO;
+using FruitsDb.DAO.Enums;
 using FruitsDb.Mappers.Abstract;
 using FruitsDb.Mappers.Implemntations;
 using FruitsDb.Models;
@@ -37,16 +38,16 @@ namespace FruitsDb
             var fruitsService = diProvider.GetService<IFruitsService>();
 
             // Вставляем фрукты
-            fruitsService.TryToAddFruit(new Fruit() { Name = "Апельсин", Weight = 250.0 });
-            fruitsService.TryToAddFruit(new Fruit() { Name = "Лимон", Weight = 150 });
-            fruitsService.TryToAddFruit(new Fruit() { Name = "Мандарин", Weight = 100 });
+            fruitsService.TryToAddFruit(new Fruit() { Name = "Апельсин", Weight = 250.0, Color = FruitColor.Red });
+            fruitsService.TryToAddFruit(new Fruit() { Name = "Лимон", Weight = 150, Color= FruitColor.Yellow });
+            fruitsService.TryToAddFruit(new Fruit() { Name = "Мандарин", Weight = 100, Color = FruitColor.Green });
 
             // Распечатываем фрукты
             var fruits = fruitsService.GetAllFruits();
 
             foreach (var fruit in fruits)
             {
-                Console.WriteLine($"ID: {fruit.Id}, Название: {fruit.Name}, Вес: {fruit.Weight}");
+                Console.WriteLine($"ID: {fruit.Id}, Название: {fruit.Name}, Вес: {fruit.Weight}, Цвет: { fruitsService.GetFruitColorName(fruit.Color) }");
             }
 
             Console.ReadLine();
